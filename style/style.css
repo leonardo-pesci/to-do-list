@@ -17,6 +17,7 @@
 body {
     color: var(--color-black);
     background-color: var(--color-bg);
+    font-family: Inter, sans-serif;
 }
 
 .bigContainer {

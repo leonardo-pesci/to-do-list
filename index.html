@@ -24,24 +24,32 @@
 
 			<header id="todoHeader" class="card d-flex">
 				<h1 id="title">TO-DO LIST</h1>
-				<div id="logoContainer"></div>
+				<div id="logoContainer">
+					<img src="./img/logo.svg" alt="">
+				</div>
 			</header>
 
 			<main id="todoMainPage">
-				<div id="todoContainer" class="d-flex">
-					<div class="todoItem card d-flex">
-						<div class="todoTick"></div>
+				<ul id="todoContainer" class="d-flex">
+					<li class="todoItem card d-flex">
+						<div class="todoCheck c-pointer">
+							<img src="./img/check.svg" alt="">
+						</div>
 						<span class="todoText">Guardare la coding week</span>
-					</div>
-					<div class="todoItem card d-flex">
-						<div class="todoTick"></div>
+					</li>
+					<li class="todoItem card d-flex">
+						<div class="todoCheck c-pointer">
+							<img src="./img/check.svg" alt="">
+						</div>
 						<span class="todoText">Imparare a sviluppare app interattive</span>
-					</div>
-				</div>
+					</li>
+				</ul>
 
 				<div id="todoAdd" class="card d-flex">
 					<input type="text" id="todoInput" placeholder="aggiungi attività"></input>
-					<div id="todoAddBtn"></div>
+					<div id="todoAddBtn" class="c-pointer">
+						<img src="./img/add.svg" alt="">
+					</div>
 				</div>
 
 			</main>

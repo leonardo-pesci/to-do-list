@@ -30,23 +30,26 @@ body {
 }
 
 .card {
+    padding: 15px;
     border-radius: 15px;
 }
 
 /* Header */
 #todoHeader {
     background-color: var(--color-primary);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #title {
-    height: 100%;
     color: var(--color-white);
+    flex-grow: 1;
     padding: 10px;
     margin: 0;
 }
 
 #logoContainer {
-
 }
 
 
@@ -68,13 +71,9 @@ body {
     overflow: hidden;
 }
 
-.todoTick {
-    width: 60px;
-    height: 60px;
-    color: var(--color-tertiary);
+.todoCheck {
     background-color: var(--color-secondary);
-    background-image: url(./../img/check.svg);
-    background-size: cover;
+    padding: 15px;
 }
 
 .todoText {
@@ -106,9 +105,10 @@ body {
     height: 60px;
     color: var(--color-tertiary);
     background-color: var(--color-secondary);
-    background-image: url(./../img/add.svg);
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
     border-radius: 10px;
+}
+
+/* Other */
+.c-pointer {
+    cursor: pointer;
 }

@@ -5,21 +5,35 @@
 }
 
 :root {
-    --color-bg: rgb(210, 239, 232); 
-    --color-primary: rgb(95, 198, 173); 
-    --color-secondary: rgb(217, 255, 102);
-    --color-tertiary: rgb(52, 75, 201);
+    --color-bg: #d2efe8; 
+    --color-primary: #5fc6ad; 
+    --color-secondary: #d9ff66;
+    --color-tertiary: #344bc9;
+    --color-black: #000000;
+    --color-white: #eee2e2;
+    --color-gray: #9d9d9d;
 }
 
+body {
+    color: var(--color-black);
+    background-color: var(--color-bg);
+}
 
+.bigContainer {
+    width: 90%;
+    max-width: 900px;
+    height: 100vh; /* ! da eliminare */
+    margin: 30px auto;
+    background-color: rgba(210, 95, 95, 0.352);
+}
 
 /* Header */
 #todoHeader {
-
+    background-color: var(--color-primary);
 }
 
 #title {
-
+    color: var(--color-white);
 }
 
 #logoContainer {
@@ -38,6 +52,15 @@
 }
 
 .todoItem {
+    background-color: var(--color-white);
+}
+
+.todoTick {
+    color: var(--color-tertiary);
+    background-color: var(--color-secondary);
+}
+
+.todoText {
 
 }
 
@@ -45,13 +68,14 @@
 
 /* Add */
 #todoAdd {
-    
+    background-color: var(--color-primary);
 }
 
 #todoInput {
-
+    color: var(--color-gray);
 }
 
 #todoAddBtn {
-    
+    color: var(--color-tertiary);
+    background-color: var(--color-secondary);
 }

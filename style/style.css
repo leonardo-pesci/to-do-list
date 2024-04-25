@@ -10,7 +10,7 @@
     --color-secondary: #d9ff66;
     --color-tertiary: #344bc9;
     --color-black: #000000;
-    --color-white: #eee2e2;
+    --color-white: #ffffff;
     --color-gray: #9d9d9d;
 }
 
@@ -20,12 +20,17 @@ body {
     font-family: Inter, sans-serif;
 }
 
-.bigContainer {
+#bigContainer {
     width: 90%;
     max-width: 900px;
     height: 100vh; /* ! da eliminare */
+    flex-direction: column;
+    gap: 15px;
     margin: 30px auto;
-    background-color: rgba(210, 95, 95, 0.352);
+}
+
+.card {
+    border-radius: 15px;
 }
 
 /* Header */
@@ -34,7 +39,10 @@ body {
 }
 
 #title {
+    height: 100%;
     color: var(--color-white);
+    padding: 10px;
+    margin: 0;
 }
 
 #logoContainer {
@@ -49,20 +57,28 @@ body {
 }
 
 #todoContainer {
-    
+    flex-direction: column;
+    gap: 10px;
 }
 
 .todoItem {
+    height: 60px;
     background-color: var(--color-white);
+    flex-direction: row;
+    overflow: hidden;
 }
 
 .todoTick {
+    width: 60px;
+    height: 60px;
     color: var(--color-tertiary);
     background-color: var(--color-secondary);
+    background-image: url(./../img/check.svg);
+    background-size: cover;
 }
 
 .todoText {
-
+    padding: 16px;
 }
 
 
@@ -70,13 +86,29 @@ body {
 /* Add */
 #todoAdd {
     background-color: var(--color-primary);
+    flex-direction: row;
+    gap: 10px;
+    padding: 15px;
+    margin-top: 15px;
 }
 
 #todoInput {
+    font-size: 16px;
     color: var(--color-gray);
+    flex-grow: 1;
+    border: 0;
+    border-radius: 10px;
+    padding-left: 10px;
 }
 
 #todoAddBtn {
+    width: 60px;
+    height: 60px;
     color: var(--color-tertiary);
     background-color: var(--color-secondary);
+    background-image: url(./../img/add.svg);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
 }

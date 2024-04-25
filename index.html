@@ -20,7 +20,7 @@
 	</head>
 
 	<body>
-		<div class="bigContainer">
+		<div id="bigContainer" class="d-flex">
 
 			<header id="todoHeader" class="card d-flex">
 				<h1 id="title">TO-DO LIST</h1>
@@ -28,19 +28,19 @@
 			</header>
 
 			<main id="todoMainPage">
-				<div id="todoContainer">
+				<div id="todoContainer" class="d-flex">
 					<div class="todoItem card d-flex">
 						<div class="todoTick"></div>
-						<div class="todoText">Guardare la coding week</div>
+						<span class="todoText">Guardare la coding week</span>
 					</div>
 					<div class="todoItem card d-flex">
 						<div class="todoTick"></div>
-						<div class="todoText">Imparare a sviluppare app interattive</div>
+						<span class="todoText">Imparare a sviluppare app interattive</span>
 					</div>
 				</div>
 
 				<div id="todoAdd" class="card d-flex">
-					<input type="text" id="todoInput" placeholder="aggiungi attività"></div>
+					<input type="text" id="todoInput" placeholder="aggiungi attività"></input>
 					<div id="todoAddBtn"></div>
 				</div>
 

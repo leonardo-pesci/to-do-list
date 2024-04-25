@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: rgb(210, 239, 232); 
+    --color-primary: rgb(95, 198, 173); 
+    --color-secondary: rgb(217, 255, 102);
+    --color-tertiary: rgb(52, 75, 201);
+}
+

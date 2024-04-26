@@ -5,9 +5,9 @@
 }
 
 :root {
-    --color-bg: #d2efe8; 
-    --color-primary: #5fc6ad; 
-    --color-secondary: #d9ff66;
+    --color-bg: #9fd9ee; 
+    --color-primary: #FBA834; 
+    --color-secondary: #FFF275;
     --color-tertiary: #344bc9;
     --color-black: #000000;
     --color-white: #ffffff;
@@ -25,12 +25,10 @@ body {
     max-width: 900px;
     height: 100vh; /* ! da eliminare */
     flex-direction: column;
-    gap: 15px;
     margin: 30px auto;
 }
 
-.card {
-    padding: 15px;
+.panel {
     border-radius: 15px;
 }
 
@@ -40,12 +38,12 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 16px;
 }
 
 #title {
-    color: var(--color-white);
+    color: var(--color-black);
     flex-grow: 1;
-    padding: 10px;
     margin: 0;
 }
 
@@ -59,9 +57,19 @@ body {
 
 }
 
+#emptyMessage {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+}
+
 #todoContainer {
     flex-direction: column;
     gap: 10px;
+    padding: 0;
 }
 
 .todoItem {
@@ -69,6 +77,7 @@ body {
     background-color: var(--color-white);
     flex-direction: row;
     overflow: hidden;
+    list-style-type: none;
 }
 
 .todoCheck {
@@ -77,7 +86,7 @@ body {
 }
 
 .todoText {
-    padding: 16px;
+    padding: 15px;
 }
 
 
@@ -88,11 +97,10 @@ body {
     flex-direction: row;
     gap: 10px;
     padding: 15px;
-    margin-top: 15px;
 }
 
 #todoInput {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--color-gray);
     flex-grow: 1;
     border: 0;
@@ -101,11 +109,11 @@ body {
 }
 
 #todoAddBtn {
-    width: 60px;
-    height: 60px;
-    color: var(--color-tertiary);
+    width: 54px;
     background-color: var(--color-secondary);
-    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
 }
 
 /* Other */

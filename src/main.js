@@ -1,14 +1,18 @@
 /* Elements */
 const emptyMessage = document.querySelector('#emptyMessage')
 const todoContainer = document.querySelector('#todoContainer')
+const doneContainer = document.querySelector('#doneContainer')
 const todoInput = document.querySelector('#todoInput')
 const todoAddBtn = document.querySelector('#todoAddBtn')
 
 /* Variables */
 let todoList = []
-
 const todoStorage = localStorage.getItem('todoList')
 if (todoStorage) todoList = JSON.parse(todoStorage)
+
+let doneList = []
+const doneStorage = localStorage.getItem('doneList')
+if (doneStorage) doneList = JSON.parse(todoStorage)
 
 /* Functions */
 let buttonEvent = () => {
@@ -40,18 +44,28 @@ let renderList = () => {
         let element = createItem(item, i)
 
         todoContainer.appendChild(element)
-        localStorage.setItem('todoList', JSON.stringify(todoList))
     })
+
+    doneList.forEach( (item, i) => {
+        let element = createItem(item, i)
+
+        doneContainer.appendChild(element)
+    })
+
+    localStorage.setItem('todoList', JSON.stringify(todoList))
+    localStorage.setItem('doneList', JSON.stringify(doneList))
 
     const checks = document.querySelectorAll('.todoCheck')
     checks.forEach( (check, i) => {
         check.addEventListener('click', () => {
+            doneList.push(todoList[i])
             todoList.splice(i, 1)
 
             renderList()
         })
     })
 }
+
 renderList()
 
 

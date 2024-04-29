@@ -43,12 +43,28 @@ let createItem = (type, text, i) => {
 } //? Crea l'elemento e assegna id e classi
 
 let renderList = () => {
+    // svuota i contenitori
     todoContainer.innerHTML = ''
     doneContainer.innerHTML = ''
 
     if (todoList.length === 0) emptyMessage.classList.remove('visually-hidden')
     else emptyMessage.classList.add('visually-hidden')
 
+    // riempie i contenitori
+    fillContainers()
+
+    // salva in locale le liste
+    localStorage.setItem('todoList', JSON.stringify(todoList))
+    localStorage.setItem('doneList', JSON.stringify(doneList))
+
+    // abilita i tasti
+    ableChecks()
+    ableUncheck()
+    ableCloses()
+
+} //? aggiorna le liste e i dati salvati in locale
+
+let fillContainers = () => {
     todoList.forEach( (item, i) => {
         let element = createItem('todo', item, i)
 
@@ -60,10 +76,9 @@ let renderList = () => {
 
         doneContainer.appendChild(element)
     })
+} //? Riempie i contenitori
 
-    localStorage.setItem('todoList', JSON.stringify(todoList))
-    localStorage.setItem('doneList', JSON.stringify(doneList))
-
+let ableChecks = () => {
     const checks = document.querySelectorAll('.todoCheck')
     checks.forEach( (check, i) => {
         check.addEventListener('click', () => {
@@ -73,9 +88,9 @@ let renderList = () => {
             renderList()
         })
     })
+} //? abilita i check gialli
 
-    
-
+let ableUncheck = () => {
     const unchecks = document.querySelectorAll('.doneUncheck') //!
     unchecks.forEach( (uncheck, i) => {
         uncheck.addEventListener('click', () => {
@@ -85,7 +100,9 @@ let renderList = () => {
             renderList()
         })
     })
+} //? abilita i check verdi (inversi)
 
+let ableCloses = () => {
     const crosses = document.querySelectorAll('.doneClose') //!
     crosses.forEach( (cross, i) => {
         cross.addEventListener('click', () => {
@@ -94,9 +111,7 @@ let renderList = () => {
             renderList()
         })
     })
-
-    
-}
+} //? Abilita i tasti di chiusura
 
 renderList()
 

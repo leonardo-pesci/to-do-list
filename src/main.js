@@ -5,12 +5,15 @@ const todoInput = document.querySelector('#todoInput')
 const todoAddBtn = document.querySelector('#todoAddBtn')
 
 /* Variables */
-let list = []
+let todoList = []
+
+const todoStorage = localStorage.getItem('todoList')
+if (todoStorage) todoList = JSON.parse(todoStorage)
 
 /* Functions */
 let buttonEvent = () => {
     if (todoInput.value !== '') {
-        list.push(todoInput.value)
+        todoList.push(todoInput.value.trim())
         renderList()
 
         todoInput.value = ''
@@ -30,23 +33,26 @@ let createItem = (text, i) => {
 let renderList = () => {
     todoContainer.innerHTML = ''
 
-    if (list.length === 0) emptyMessage.classList.remove('visually-hidden')
+    if (todoList.length === 0) emptyMessage.classList.remove('visually-hidden')
     else emptyMessage.classList.add('visually-hidden')
 
-    list.forEach( (item, i) => {
+    todoList.forEach( (item, i) => {
         let element = createItem(item, i)
+
         todoContainer.appendChild(element)
+        localStorage.setItem('todoList', JSON.stringify(todoList))
     })
 
     const checks = document.querySelectorAll('.todoCheck')
     checks.forEach( (check, i) => {
         check.addEventListener('click', () => {
-            list.splice(i, 1)
+            todoList.splice(i, 1)
 
             renderList()
         })
     })
 }
+renderList()
 
 
 /* Events */
@@ -54,4 +60,4 @@ todoAddBtn.addEventListener('click', buttonEvent)
 
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') buttonEvent()
-})
+}) 

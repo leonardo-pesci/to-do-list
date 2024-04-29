@@ -85,12 +85,12 @@ body {
 
 }
 
-.todoCheck, .doneCheck, .doneClose {
+.todoCheck, .doneUncheck, .doneClose {
     background-color: var(--color-secondary);
     padding: 15px;
 }
 
-.doneCheck {
+.doneUncheck {
     background-color: var(--color-green);
 }
 

@@ -47,16 +47,9 @@ body {
     margin: 0;
 }
 
-#logoContainer {
-}
-
 
 
 /* Container */
-#todoMainPage {
-
-}
-
 #emptyMessage {
     display: block;
     width: 100%;

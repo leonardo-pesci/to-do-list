@@ -23,23 +23,24 @@ let buttonEvent = () => {
         todoInput.value = ''
         todoInput.focus()
     }
-}
+} //? Funzione eseguita dagli eventi
 
 let createItem = (type, text, i) => {
     let item = document.createElement('li')
-    item.id = 'item' + i
-
+    
     if (type === 'todo') {
+        item.id = 'item' + i
         item.className = 'todoItem panel d-flex'
-        item.innerHTML = `<div id="check${i}" class="todoCheck c-pointer"><img src="./img/check.svg" alt=""></div><span class="todoText">${text}</span>`
+        item.innerHTML = `<div id="check${i}" class="todoCheck c-pointer"><img src="./img/check.svg" alt=""></div><span class="text">${text}</span>`
 
     } else if (type === 'done') {
+        item.id = 'doneItem' + i
         item.className = 'doneItem panel d-flex'
-        item.innerHTML = `<div id="uncheck${i}" class="doneUncheck c-pointer"><img src="./img/check.svg" alt=""></div><span class="todoText">${text}</span><div id="close${i}" class="doneClose c-pointer"><img src="./img/close.png" alt=""></div>`
+        item.innerHTML = `<div id="uncheck${i}" class="doneUncheck c-pointer"><img src="./img/check.svg" alt=""></div><span class="text">${text}</span><div id="close${i}" class="doneClose c-pointer"><img src="./img/close.png" alt=""></div>`
     }
 
     return item
-}
+} //? Crea l'elemento e assegna id e classi
 
 let renderList = () => {
     todoContainer.innerHTML = ''
@@ -73,15 +74,28 @@ let renderList = () => {
         })
     })
 
-    const unchecks = document.querySelectorAll('.todoCheck') //!
-    checks.forEach( (uncheck, i) => {
+    
+
+    const unchecks = document.querySelectorAll('.doneUncheck') //!
+    unchecks.forEach( (uncheck, i) => {
         uncheck.addEventListener('click', () => {
-            todoList.push(todoList[i])
+            todoList.push(doneList[i])
             doneList.splice(i, 1)
 
             renderList()
         })
     })
+
+    const crosses = document.querySelectorAll('.doneClose') //!
+    crosses.forEach( (cross, i) => {
+        cross.addEventListener('click', () => {
+            doneList.splice(i, 1)
+
+            renderList()
+        })
+    })
+
+    
 }
 
 renderList()

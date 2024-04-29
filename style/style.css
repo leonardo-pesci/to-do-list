@@ -81,13 +81,12 @@ body {
     margin: 30px 0 0;
 }
 
-.doneItem {
-
+.todoCheck, .doneUncheck, .doneClose {
+    padding: 15px;
 }
 
-.todoCheck, .doneUncheck, .doneClose {
+.todoCheck {
     background-color: var(--color-secondary);
-    padding: 15px;
 }
 
 .doneUncheck {
@@ -104,12 +103,10 @@ body {
     background-repeat: no-repeat;
 }
 
-.todoText {
+.text {
     padding: 15px;
     flex-grow: 1;
 }
-
-
 
 /* Add */
 #todoAdd {
